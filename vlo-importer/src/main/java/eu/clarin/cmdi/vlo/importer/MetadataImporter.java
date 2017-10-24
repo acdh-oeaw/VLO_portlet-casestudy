@@ -350,7 +350,7 @@ public class MetadataImporter {
         LOG.info("Found {} file(s) with errors.", nrOfFilesWithError);
         LOG.info("Found {} file(s) too large.", nrOfFilesTooLarge);
         LOG.info("Skipped {} file(s) due to duplicate id.", nrOfFilesSkipped);
-        LOG.info("Update of {} took {} secs. Total nr of files analyzed {}", nrOFDocumentsSent, time / 1000, nrOfFilesAnalyzed);
+        LOG.info("Update of "+nrOFDocumentsSent+" took "+(time / 1000)+" secs. Total nr of files analyzed "+ nrOfFilesAnalyzed);
     }
 
     /**

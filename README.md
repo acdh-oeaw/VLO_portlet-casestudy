@@ -1,3 +1,24 @@
+# Important note
+
+This project is a fork of the development branch of 
+https://github.com/clarin-eric/VLO, state October 2017.  
+It's only purpose is to modify the vlo-web-app sub-project in a way 
+that it runs as a portlet in the gcube framework. 
+
+To achieve this goal at enlarges the pom.xml for two dependencies: 
+wicketstuff-portlet 7.8.0
+portlet-api 2.0
+
+Further on the web.xml was modified and five files added (all in WEB-INF):
+portlet.xml
+liferay-portlet.xml
+liferay-plugin-package.xml
+liferay-plugin-package.properties
+liferay-display.xml
+
+Everything else remains unchanged means no changes at the Java code base were necessary!
+
+
 # Table of Contents
 - What is the VLO? 
 - What should I read? 

@@ -12,7 +12,6 @@
     <!-- When updating the version number here, also update the version number
          in each module's pom.xml
     -->
-    <version>4.3-SNAPSHOT</version>
     
     <description>Virtual Language Observatory (VLO) parent project</description>
     <organization>
@@ -23,12 +22,14 @@
     <modules>
         <module>vlo-solr</module>
         <module>vlo-web-app</module>
-        <module>vlo-importer</module>
+        
         <module>vlo-commons</module>
         <module>vlo-vocabularies</module>
         <module>vlo-sitemap</module>
         <module>vlo-statistics</module>
         <module>vlo-distribution</module>
+        
+        <module>vlo-importer</module>
     </modules>
 
     <properties>
@@ -37,7 +38,7 @@
         
         <!-- Common runtime dependency versions -->
         <solr.version>4.10.4</solr.version>
-        <slf4j.version>1.7.24</slf4j.version>
+        <slf4j.version>1.6.4</slf4j.version>
         <saxon.version>9.5.1-8</saxon.version>
         
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -93,4 +94,5 @@
         </repository>
     </repositories>
     	
+    <version>6.5</version>
 </project>

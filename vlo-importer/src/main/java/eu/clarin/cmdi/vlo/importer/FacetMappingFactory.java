@@ -99,7 +99,7 @@ public class FacetMappingFactory {
      * @return the facet mapping used to map meta data to facets
      */
     private FacetMapping createMapping(String facetConcepts, String xsd, Boolean useLocalXSDCache) {
-        LOG.debug("Creating mapping for {} using {} (useLocalXSDCache: {})", xsd, facetConcepts, useLocalXSDCache);
+        LOG.debug("Creating mapping for " + xsd +" using " +  facetConcepts + "(useLocalXSDCache: " + useLocalXSDCache +")");
         FacetMapping result = new FacetMapping();
         // Gets the configuration. VLOMarshaller only reads in the facetconceptmapping.xml file and returns the result (though the reading in is implicit).
         FacetConceptMapping conceptMapping = marshaller.getFacetConceptMapping(facetConcepts);
@@ -136,12 +136,12 @@ public class FacetMappingFactory {
                                     AcceptableContext acceptableContext = facetConcept.getAcceptableContext();
                                     if (context == null && acceptableContext.includeEmpty()) {
                                         // no context is accepted
-                                        LOG.trace("facet[{}] path[{}] context[{}](empty) is accepted", facetConcept.getName(), path, context);
+                                        LOG.trace("facet[{}] path["+facetConcept.getName()+"] context["+path, context+"](empty) is accepted");
                                         xpaths.add(path);
                                         handled = true;
                                     } else if (acceptableContext.getConcepts().contains(context)) {
                                         // a specific context is accepted
-                                        LOG.trace("facet[{}] path[{}] context[{}] is accepted", facetConcept.getName(), path, context);
+                                        LOG.trace("facet[" + facetConcept.getName() +"] path["+path+"] context["+context+"] is accepted");
                                         xpaths.add(path);
                                         handled = true;
                                     }
@@ -151,21 +151,21 @@ public class FacetMappingFactory {
                                     RejectableContext rejectableContext = facetConcept.getRejectableContext();
                                     if (context == null && rejectableContext.includeEmpty()) {
                                         // no context is rejected
-                                        LOG.trace("facet[{}] path[{}] context[{}](empty) is rejected", facetConcept.getName(), path, context);
+                                        LOG.trace("facet["+facetConcept.getName()+"] path["+path+"] context["+context+"](empty) is rejected");
                                         handled = true;
                                     } else if (rejectableContext.getConcepts().contains(context)) {
                                         // a specific context is rejected
-                                        LOG.trace("facet[{}] path[{}] context[{}] is rejected", facetConcept.getName(), path, context);
+                                        LOG.trace("facet["+facetConcept.getName()+"] path["+path+"] context["+context+"] is rejected");
                                         handled = true;
                                     } else if (rejectableContext.includeAny()) {
                                         // any context is rejected
-                                        LOG.trace("facet[{}] path[{}] context[{}](any) is rejected", facetConcept.getName(), path, context);
+                                        LOG.trace("facet["+facetConcept.getName()+"] path["+path+"] context["+context+"](any) is rejected");
                                         handled = true;
                                     }
                                 }
                                 if (!handled && context != null && facetConcept.hasAcceptableContext() && facetConcept.getAcceptableContext().includeAny()) {
                                     // any, not rejected context, is accepted
-                                    LOG.trace("facet[{}] path[{}] context[{}](any) is accepted", facetConcept.getName(), path, context);
+                                    LOG.trace("facet["+facetConcept.getName()+"] path["+path+"] context["+context+"](any) is accepted");
                                     xpaths.add(path);
                                 }
                             }

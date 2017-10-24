@@ -79,7 +79,7 @@ public class ContentSearchFormPanel extends GenericPanel<String> {
                     json.put(endPoint, new JSONArray(new Object[]{selfLink}));
                     return json.toString(2);
                 } catch (JSONException ex) {
-                    logger.warn("Could not create JSON for aggregation context with endpoint '{}' and docId '{}'", endPoint, selfLink, ex);
+                    logger.warn("Could not create JSON for aggregation context with endpoint '{}' and docId '{}'", endPoint, selfLink);
                     return null;
                 }
             }

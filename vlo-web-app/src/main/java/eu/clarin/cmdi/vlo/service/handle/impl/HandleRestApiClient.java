@@ -82,7 +82,7 @@ public class HandleRestApiClient implements HandleClient {
 
             if (Response.Status.OK.getStatusCode() != response.getStatus()) {
                 final Response.StatusType statusInfo = response.getStatusInfo();
-                logger.error("Unexpected response status {} - {} for {}", statusInfo.getStatusCode(), statusInfo.getReasonPhrase(), requestUrl);
+                logger.error("Unexpected response status {} - {} for {}", statusInfo.getStatusCode(), statusInfo.getReasonPhrase());
             } else {
                 final String responseString = response.getEntity(String.class);
                 return getUrlFromJson(responseString);

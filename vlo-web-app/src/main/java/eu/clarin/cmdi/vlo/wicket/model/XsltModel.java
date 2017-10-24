@@ -69,7 +69,7 @@ public class XsltModel extends LoadableDetachableModel<String> {
                 final String transformed = getTransformationService().transformXml(url);
                 if (transformed != null && !transformed.isEmpty()) {
                     if (logger.isDebugEnabled()) {
-                        logger.debug("Successful transformation using URL {} out of {}: {}", 1 + urls.indexOf(url), urls.size(), url);
+                        logger.debug("Successful transformation using URL {} out of {}: {}", 1 + urls.indexOf(url), urls.size());
                     }
 
                     //transformation was successful, ignore remaining items if any

@@ -6,14 +6,13 @@
     <parent>
         <groupId>eu.clarin.cmdi</groupId>
         <artifactId>vlo</artifactId>
-        <version>4.3-SNAPSHOT</version>
+        <version>6.5</version>
     </parent>
     
     <modelVersion>4.0.0</modelVersion>
     <groupId>eu.clarin.cmdi</groupId>
-    <artifactId>vlo-web-app</artifactId>
+    <artifactId>vlo_webapp</artifactId>
     <packaging>war</packaging>
-    <version>4.3-SNAPSHOT</version>
     <name>VLO Web Application</name>
     <description></description>
 
@@ -174,6 +173,19 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+        	<groupId>org.wicketstuff</groupId>
+        	<artifactId>wicketstuff-portlet</artifactId>
+        	<version>7.8.0</version>
+        </dependency>
+        <dependency>
+        	<groupId>javax.portlet</groupId>
+        	<artifactId>portlet-api</artifactId>
+        	<version>2.0</version>
+        	<scope>provided</scope>
+        </dependency>
+        
+        
     </dependencies>
     
     <build>
@@ -431,4 +443,5 @@
             </snapshots>
         </repository>
     </repositories>
+    <version>6.5</version>
 </project>
